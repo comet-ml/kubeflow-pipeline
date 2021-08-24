@@ -1,3 +1,4 @@
+from comet_ml import Experiment
 import argparse
 import json
 import os
@@ -12,6 +13,9 @@ from keras.callbacks import TensorBoard
 from sklearn.model_selection import train_test_split
 
 MODEL_FILE = 'keras_saved_model.h5'
+
+
+experiment = Experiment()
 
 
 def load_feature(input_x_path):
