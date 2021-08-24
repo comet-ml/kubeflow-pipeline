@@ -112,12 +112,12 @@ Use the experiment id and the compiled pipeline to run a pipeline. `client.run_p
 
 ```python
 arguments = {}
-
+# comet_api_key = read api key from env var or from config
 run_name = pipeline_func.__name__ + ' run'
 run_result = client.run_pipeline(experiment.id, 
                                  run_name, 
                                  pipeline_filename, 
-                                 arguments)
+                                    arguments={'comet_api_key': comet_api_key})
 ```
 
 ## Options to scale your training
