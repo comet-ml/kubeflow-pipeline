@@ -117,7 +117,7 @@ run_name = pipeline_func.__name__ + ' run'
 run_result = client.run_pipeline(experiment.id, 
                                  run_name, 
                                  pipeline_filename, 
-                                    arguments={'comet_api_key': comet_api_key})
+                                 arguments={'comet_api_key': comet_api_key})
 ```
 
 ## Options to scale your training
