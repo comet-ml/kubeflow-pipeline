@@ -16,6 +16,7 @@ implementation:
     image: gcr.io/<PROJECT-ID>/kubeflow/ner/train:latest
     command: [
       python3, /pipelines/component/src/train.py,
+      --comet_api_key,            {inputValue: comet_api_key},
       --input-x-path,             {inputValue: Input x URI},
       --input-job-dir,            {inputValue: Input job dir URI},
       --input-y-path,             {inputValue: Input y URI},
