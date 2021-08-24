@@ -15,7 +15,7 @@ from sklearn.model_selection import train_test_split
 MODEL_FILE = 'keras_saved_model.h5'
 
 
-experiment = Experiment()
+
 
 
 def load_feature(input_x_path):
@@ -30,6 +30,7 @@ def load_label(input_y_path):
 
 # Defining and parsing the command-line arguments
 parser = argparse.ArgumentParser()
+parser.add_argument('--comet_api_key', type=str, help='')
 parser.add_argument('--input-x-path', type=str, help='')
 parser.add_argument('--input-y-path', type=str, help='')
 parser.add_argument('--input-job-dir', type=str, help='')
@@ -42,6 +43,8 @@ parser.add_argument('--output-model-path', type=str, help='')
 parser.add_argument('--output-model-path-file', type=str, help='')
 
 args = parser.parse_args()
+
+experiment = Experiment(api_key=args.comet_api_key)
 
 print(os.path.dirname(args.output_model_path))
 
